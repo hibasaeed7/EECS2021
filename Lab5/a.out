@@ -1,0 +1,32 @@
+#! /cs/local/bin/vvp
+:ivl_version "11.0 (stable)";
+:ivl_delay_selection "TYPICAL";
+:vpi_time_precision + 0;
+:vpi_module "/cs/local/lib64/ivl/system.vpi";
+:vpi_module "/cs/local/lib64/ivl/vhdl_sys.vpi";
+:vpi_module "/cs/local/lib64/ivl/vhdl_textio.vpi";
+:vpi_module "/cs/local/lib64/ivl/v2005_math.vpi";
+:vpi_module "/cs/local/lib64/ivl/va_math.vpi";
+S_0xcb13d0 .scope module, "labK" "labK" 2 1;
+ .timescale 0 0;
+L_0xd25e90 .functor NOT 1, v0xcb04e0_0, C4<0>, C4<0>, C4<0>;
+L_0xd25f80 .functor AND 1, v0xcb1ba0_0, L_0xd25e90, C4<1>, C4<1>;
+v0xcb1ba0_0 .var "a", 0 0;
+v0xcb04e0_0 .var "b", 0 0;
+v0xd25d30_0 .net "tmp", 0 0, L_0xd25e90;  1 drivers
+v0xd25dd0_0 .net "z", 0 0, L_0xd25f80;  1 drivers
+    .scope S_0xcb13d0;
+T_0 ;
+    %pushi/vec4 1, 0, 1;
+    %store/vec4 v0xcb1ba0_0, 0, 1;
+    %pushi/vec4 1, 0, 1;
+    %store/vec4 v0xcb04e0_0, 0, 1;
+    %vpi_call 2 9 "$display", "a=%b b=%b z=%b", v0xcb1ba0_0, v0xcb04e0_0, v0xd25dd0_0 {0 0 0};
+    %vpi_call 2 10 "$finish" {0 0 0};
+    %end;
+    .thread T_0;
+# The file index is used to find the file name in the following table.
+:file_names 3;
+    "N/A";
+    "<interactive>";
+    "k2a01.v";
